@@ -123,6 +123,73 @@
                             Gentle Introduction to XML</a></p>
       </div>
     </div>
+
+    <div class="step" id="xml">
+    <h2>Extensible Markup Language (XML)</h2>
+        <p>XML trennt Inhalt und Struktur sowie verschiedene Ebenen von Semantik und Metadaten durch <strong>Delimiter und Schlüsselworte</strong> voneinander.</p>
+        <p>Vokabular und Syntax von XML sind <strong>anpassbar</strong> und <strong>erweiterbar</strong>. Mit Schema-Sprachen lässt sich ein <strong>Regelwerk</strong> für projekteigene XML-Dateien erstellen.</p>
+    </div>
+
+    <div class="step">
+    <p>Delimiter sind:</p>
+    <ul>
+    <li>Spitze Klammern (“Krokodilsklammern”) und Schrägstrich</li>
+    <li>Anführungszeichen</li>
+    <li>Kaufmanns-Und und Semikolon</li>
+    </ul>
+    </div>
+    <div class="step">
+    <p>Bei den Schlüsselworten unterscheidet man zwischen:</p>
+    <ul>
+    <li>Elementen: <code>&lt;element&gt;</code>
+    <pre><code class="xml">&lt;letter&gt;
+        &lt;sender&gt;Max Mustermann&lt;/sender&gt;
+        &lt;recipient&gt;Mina Musterfrau&lt;/recipient&gt;
+    &lt;/letter&gt;</code></pre></li>
+    <li>Leeren Elementen: <code>&lt;element /&gt;</code>
+    <pre><code class="xml">&lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="2"/&gt; dolor sit</code></pre></li>
+    <li>Attributen: <code>&lt;element attribut=&quot;attributwert&quot;&gt;</code>
+    <pre><code class="xml">&lt;letter identifier=&quot;xyz123&quot;&gt;
+        &lt;sender identifier=&quot;m0001&quot;&gt;Max Mustermann&lt;/sender&gt;
+        &lt;recipient identifier=&quot;f0001&quot;&gt;Mina Musterfrau&lt;/recipient&gt;
+    &lt;/letter&gt;</code></pre></li>
+    <li>Namespace-Präfixen: <code>&lt;präfix:element&gt;</code>
+    <pre><code class="xml">&lt;root xmlns:prj=&quot;http://url/to/namespace/prj/&quot;&gt;
+        &lt;letter&gt;
+            &lt;sender identifier=&quot;m0001&quot;&gt;Max Mustermann&lt;/sender&gt;
+            &lt;prj:letter&gt;Blackletter Script&lt;/prj:letter&gt;
+        &lt;/letter&gt;
+    &lt;root&gt;</code></pre></li>
+    </ul>
+    </div>
+
+
+    <div class="step">
+    <h2>Wohlgeformtheit und Validität</h2>
+    <p>Wenn das XML-Dokument den allgemeinen Syntax-Regeln gehorcht, spricht man von “<strong>Wohlgeformtheit</strong>”. Ist das Dokument zusätzlich konform zu einem Schema, spricht man von “<strong>Validität</strong>”.</p>
+    <p>Durch die Ansetzung eines <strong>Schema-Regelwerks</strong> lassen sich XML-Dokumente sehr einfach in konsistenter Form erstellen, da jederzeit ein <strong>Feedback zur Regelhaftigkeit</strong> des Dokumentes zurückgegeben wird. Viele Text-Editoren greifen zudem auf das zurgundeliegende Schema zurück, um dem Benutzer die im Auszeichnungs-Kontext angebrachten Schlüsselworte per Knopfdruck anzubieten.</p>
+    </div>
+
+    <div class="step">
+    <p>Die grundlegende Syntax besagt:</p>
+    <ul>
+    <li>Jedes geöffnete Element muss geschlossen werden.</li>
+    <li>Elemente ohne Text-Inhalt dürfen auch als leere Tags geschrieben werden: <code>&lt;date&gt;&lt;/date&gt; => &lt;date /&gt;</code></li>
+    <li>Es ist keine Überlappung von Elementbereichen erlaubt.</li>
+    <li>Delimiter-Zeichen sind als Entitäten einzufügen, wenn sie als “normale” Zeichen erscheinen sollen: <code>& => &amp;amp;</code></li>
+    </ul>
+    </div>
+
+    <div class="step">
+    <h2>Maschinelle Verarbeitung</h2>
+    <p>Die Daten konsistent strukturierter XML-Dokumente können sehr leicht mithilfe  von Abfrage- und Transformations-Sprachen <strong>durchsucht</strong>, <strong>akkumuliert</strong> und bspw. <strong>in Ausgabeformate überführt</strong> werden.</p>
+        <p>Auf der <strong>Grundlage konsistenter Datenhaltung</strong> können also <strong>Register und Indices</strong> akkumuliert werde. Zudem lassen sich <strong>Druckvorstufen</strong> für Verlage oder <strong>HTML-Ausgaben</strong> im Rahmen dynamischer Webseiten  produzieren.</p>
+    </div>
+
+
+
+
+
     <div class="step">
       <div class="centered">
         <h2 class="red">TEI: Text Encoding Initiative</h2>
@@ -137,6 +204,7 @@
         <p class="right">aus: <a href="http://www.tei-c.org">http://www.tei-c.org</a></p>
       </div>
     </div>
+
     <div class="step">
       <div class="centered">
         <h2 class="red">Guidelines</h2>
