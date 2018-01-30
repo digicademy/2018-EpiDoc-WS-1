@@ -132,7 +132,7 @@
         <p>XML trennt Inhalt und Struktur sowie verschiedene Ebenen von Semantik und Metadaten durch
             <strong>Delimiter und Schlüsselworte</strong> voneinander.</p>
         <dfn>Delimiter sind <code>&lt; &gt; &amp; ;</code></dfn>
-        
+
           <h3 class="down-50">Beispiel</h3>
         <p>
         <code>&lt;</code> Schlüsselwort <code>&gt;</code>  <code>&amp;</code> Schlüsselwort <code>;</code>
@@ -189,10 +189,12 @@
       <div class="step">
         <p>Die grundlegende Syntax besagt:</p>
         <ul>
+          <li>Jedes Dokument enhält genau ein Wurzelelement (root element), das alle anderen Elemente des Baumes in sich schließt.</li>
+          <li>Elementnamen sind case sensitive, müssen mit Unterstrichen oder Buchstaben beginnen und dürfen keine Leerstellen enthalten.</li>
           <li>Jedes geöffnete Element muss geschlossen werden.</li>
+          <li>Es ist keine Überlappung von Elementbereichen erlaubt.</li>
           <li>Elemente ohne Text-Inhalt dürfen auch als leere Tags geschrieben werden:
               <code>&lt;date&gt;&lt;/date&gt; => &lt;date /&gt;</code></li>
-          <li>Es ist keine Überlappung von Elementbereichen erlaubt.</li>
           <li>Delimiter-Zeichen sind als Entitäten einzufügen, wenn sie als “normale” Zeichen
             erscheinen sollen: <code>& => &amp;amp;</code></li>
         </ul>
