@@ -112,8 +112,8 @@
     </div>
     <div class="step">
       <div class="centered">
-        <h1 class="red">XML – Extensible Markup Language</h1>
-        <h2 class="line-height-one-five">Semantic statt Typographie</h2>
+        <h2 class="red">XML – Extensible Markup Language</h2>
+        <h2 class="line-height-one-five">Semantik statt Typographie</h2>
         <ul class="line-height-one-five">
           <li>device-independent and system-independent storing and processing of texts in electronic form</li>
           <li>interchange and communication format </li>
@@ -125,7 +125,7 @@
     </div>
     <div class="step">
       <div class="centered">
-        <h1 class="red">TEI: Text Encoding Initiative</h1>
+        <h2 class="red">TEI: Text Encoding Initiative</h2>
         <!-- <h2 class="line-height-one-five">Semantic statt Typographie</h2>
                     <ul class="line-height-one-five">
                         <li>device-independent and system-independent storing and processing of
@@ -155,7 +155,7 @@
     </div>
     <div class="step">
       <div>
-        <h1 class="red">EpiDoc</h1>
+        <h2 class="red">EpiDoc</h2>
         <h4>Epigraphic Documents in TEI XML | text markup for ancient documents</h4>
         <blockquote>EpiDoc is an <strong>international</strong>, <strong>collaborative</strong> effort that provides <strong>guidelines</strong> and <strong>tools</strong> for encoding scholarly and educational editions of ancient documents. It uses a subset of the Text Encoding Initiative's standard for the representation of texts
           in digital form and was developed initially for the publication of <strong>digital editions</strong> of ancient inscriptions (e.g. Inscriptions of Aphrodisias, Vindolanda Tablets). Its domain has expanded to include the publication of papyri and manuscripts
@@ -183,7 +183,7 @@
 
     <div class="step">
       <div>
-        <h1 class="red">EpiDoc</h1>
+        <h2 class="red">EpiDoc</h2>
         <h2>Entwicklungsgeschichte – in Kürze</h2>
         <div class="row">
           <div class="four columns">
@@ -238,7 +238,7 @@
 
     <div class="step">
       <div>
-        <h1 class="red">Processing Instructions</h1>
+        <h2 class="red">Processing Instructions</h2>
         <h2>Schemavalidierung</h2>
         <h4>&lt;?
                         … ?&gt;</h4>
@@ -253,7 +253,7 @@
     </div>
     <div class="step">
       <div>
-        <h1 class="red">Struktur</h1>
+        <h2 class="red">Struktur</h2>
         <h2>Metadaten – Bilddaten – Textdaten</h2>
         <pre>
 <code class="linenumbers">&lt;TEI xmlns="http://www.tei-c.org/ns/1.0" xml:space="preserve" xml:lang="en"&gt;
@@ -274,7 +274,7 @@
       </div>
     </div>
     <div class="step">
-      <h1 class="red">Metadaten</h1>
+      <h2 class="red">Metadaten</h2>
       <h4>&lt;teiHeader&gt; – Pflichtelemente </h4>
       <div>
         <pre>
@@ -301,7 +301,7 @@
       </div>
     </div>
     <div class="step">
-      <h1 class="red">Metadaten</h1>
+      <h2 class="red">Metadaten</h2>
       <h4>&lt;teiHeader&gt; – Optionale Elemente </h4>
       <div>
         <blockquote>
@@ -326,13 +326,13 @@
     </div>
     <div class="step">
       <div>
-        <h1 class="red">Bilddaten</h1>
+        <h2 class="red">Bilddaten</h2>
         <blockquote>Bilddateien und andere digitale Faksimiles werden – so möglich mit @url – in der Faksimile-Section aufgeführt.</blockquote>
       </div>
     </div>
     <div class="step">
       <div>
-        <h1 class="red">Textdaten – Edition</h1>
+        <h2 class="red">Textdaten – Edition I</h2>
         <h4>Textauszeichnung</h4>
         <ul class="line-height-one-five">
           <li>Philologie und historische Wissenschaften nutzen zur Kennzeichnung <strong>textueller Phänomene</strong> ausgeklügelte und bewährte <strong>Klammersysteme</strong>. In der Regel werden durch runde, eckige, geschweifte Klammern, sowie durch hoch- und tiefgestellte Zeichen (Punkte,
@@ -342,16 +342,103 @@
         </ul>
       </div>
     </div>
+
     <div class="step">
       <div>
-        <h1 class="red">Leidener Klammersystem</h1>
+        <h2 class="red">Textdaten – Edition II</h2>
+        <h4>Textauszeichnung</h4>
+        <ul class="line-height-one-five">
+          <li>Alle zusammengehörigen Textteile des Inschriftenträgers werden von einem <code>&lt;div type="edition"&gt;</code> geklammert.</li>
+          <li>
+            Die Transkriptionen der einzelnen Textteile stehen jeweils in spezifischen <code>&lt;div type="textpart"</code><code>subtype="pediment"</code> <code>n="A"&gt;&lt;/ab&gt; … &lt;/ab&gt;&lt;/div&gt;</code>. Die Angabe von <code>type="textpart"</code> ist obligatorisch, die Angabe der Attribute <code>subtype</code> und <code>n</code> ist optional. <code>&lt;/ab&gt; … &lt;/ab&gt;</code> klammern Textblöcke als semantisch-neutrale Alternative zu <code>&lt;/p&gt; … &lt;/p&gt;</code>.
+          </li>
+          <li>
+            Die epigraphische Notation wird in XML-Notation nachgebaut. Bsp.: <code>&lt;supplied reason="lost"&gt;γδ&lt;/supplied&gt;</code> (siehe auch <a href="https://sourceforge.net/p/epidoc/code/HEAD/tree/trunk/guidelines/msword/cheatsheet.doc?format=raw">Leiden Cheatsheet</a>).
+          </li>
+          <li>
+            Kommentarteil, Apparat und Bibliographischer Teil stehen jeweils in eigenen <code>&lt;div&gt;</code>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div>
+        <h2 class="red">Textdaten – Edition II</h2>
+        <h4>Beispiel</h4>
+        <pre>
+<code class="linenumbers">&lt;TEI&gt; &lt;!-- Header, Facsimile --&gt;
+  &lt;text&gt;
+       &lt;div type="edition"&gt;
+          &lt;div type="textpart" subtype="pediment" n="1"&gt;
+            &lt;/ab&gt;
+              &lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="1"/&gt; dolor sit
+            &lt;/ab&gt;
+          &lt;/div&gt;
+          &lt;div type="textpart" subtype="section" n="2"&gt;
+            &lt;/ab&gt;
+              &lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="1"/&gt; dolor sit
+            &lt;/ab&gt;
+          &lt;/div&gt;
+          &lt;div type="textpart" subtype="base" n="3"&gt;
+            &lt;/ab&gt;
+              &lt;lb n="1"/&gt; Lorem ipsum &lt;lb n="1"/&gt; dolor sit
+            &lt;/ab&gt;
+          &lt;/div&gt;
+       &lt;/div&gt;
+       &lt;div type="translation"&gt;
+          &lt;/p&gt; Translation &lt;/p&gt;
+       &lt;/div&gt;
+       &lt;!-- Commentary, Bibliography --&gt;
+   &lt;/text&gt;
+&lt;/TEI&gt;
+</code></pre>
+        <!-- <blockquote>Erläuterungen ###</blockquote> -->
+      </div>
+    </div>
+
+    <div class="step">
+      <div>
+        <h2 class="red">Textdaten – Edition III</h2>
+        <h4>Beispiel</h4>
+        <pre>
+<code class="linenumbers">&lt;TEI&gt; &lt;!-- Header, Facsimile --&gt;
+  &lt;text&gt;
+       &lt;div type="edition"&gt;
+          &lt;!-- Transkription --&gt;
+       &lt;/div&gt;
+       &lt;div type="translation"&gt;
+          &lt;/p&gt; Translation &lt;/p&gt;
+       &lt;/div&gt;
+       &lt;div type="commentary"&gt;
+          &lt;/p&gt; Kommentartext &lt;/p&gt;
+       &lt;/div&gt;
+       &lt;div type="apparatus"&gt;
+          &lt;/p&gt; Kritischer Apparat &lt;/p&gt;
+       &lt;/div&gt;
+       &lt;div type="bibliography"&gt;
+          &lt;/listBibl&gt;
+            &lt;/bibl&gt; Bibliographische Angabe &lt;/bibl&gt;
+            &lt;/bibl&gt; Bibliographische Angabe &lt;/bibl&gt;
+          &lt;/listBibl&gt;
+       &lt;/div&gt;
+   &lt;/text&gt;
+&lt;/TEI&gt;
+</code></pre>
+        <!-- <blockquote>Erläuterungen ###</blockquote> -->
+      </div>
+    </div>
+
+    <div class="step">
+      <div>
+        <h2 class="red">Leidener Klammersystem</h2>
         <h4>Textauszeichnung</h4>
         <ul class="line-height-one-five">
           <li>Basis für traditionelle und digitale Epigraphiker ist das sogenannte
             <em><a
                                     href="https://de.wikipedia.org/wiki/Leidener_Klammersystem"
                                     >Leidener Klammersystem</a></em></li>
-          <li><a href="data/cheatsheet.pdf">EpiDoc Leiden Cheatsheet</a></li>
+          <li><a href="data/cheatsheet.pdf">EpiDoc Leiden Cheatsheet</a> und korrespondierende <a href="data/large_template_EpiDoc.xml"><code>Beispieldatei</code></a></li>
           <li><a href="http://www.stoa.org/epidoc/gl/latest/app-epi-krummreypanciera.html">EpiDoc Guidelines</a>: Appendix: Aligning EpiDoc with Panciera 1991
           </li>
           <li>Hilfreich: <a href="http://www.stoa.org/epidoc/gl/latest/app-alltrans.html">List
